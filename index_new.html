@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thiliban Manivarma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        header img {
+            border-radius: 50%;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            max-height: 200px;
+            margin-right: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            text-align: center;
+        }
+
+        .summary {
+            flex-grow: 1;
+            margin-left: 20px;
+            text-align: center;
+        }
+
+        .summary p {
+            font-size: 1.3em;
+            margin: 15px 0 0;
+            line-height: 1.3;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #555;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #777;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        .skills, .publications, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-item, .pub-item, .project-item {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .contact {
+            background-color: #f9f9f9;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Flexbox for header content */
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        /* Media query for screens smaller than 768px */
+        @media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .summary {
+                margin-left: 0;
+                text-align: center;
+            }
+
+            header h1 {
+                font-size: 2em;
+                text-align: center;
+            }
+
+            header img {
+                max-height: 150px;
+                margin-bottom: 10px;
+            }
+
+            .skill-item, .pub-item, .project-item {
+                width: 90%;
+            }
+        }
+
+        /* Media query for screens smaller than 480px (small devices like phones) */
+        @media screen and (max-width: 480px) {
+            nav a {
+                margin: 5px;
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .summary p {
+                font-size: 1.1em;
+                line-height: 1.2;
+            }
+
+            section {
+                padding: 10px;
+            }
+
+            footer {
+                font-size: 0.9em;
+            }
+        }
+
+        /* Increase font size for the list items with strong tags */
+        section#methodologies ul li strong {
+            font-size: 1.2em; /* Increase this value to make the font larger */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="flux_scaled.png" alt="Profile image of Thiliban Manivarma">
+            <div class="summary">
+                <h1>Thiliban Manivarma</h1>
+                <p>Innovative and dedicated molecular modelling enthusiast with a passion for leveraging cutting-edge technologies in computer-aided drug design, computational biophysics, and machine learning for transformative drug discovery. Demonstrated expertise in utilizing computational methods to analyze biomolecular structures and predict their interactions with precision. Excited to join dynamic teams where I can apply my skills to advance scientific research and contribute to the development of life-saving therapies.</p>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="#research">Research Experience</a>
+        <a href="#skills">Skills & Tools</a>
+        <a href="#methodologies">Methodologies and Technical Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="research">
+        <h2>Research Experience and Education</h2>
+        <ul>
+            <li><strong>Ph.D. Thesis – Computational Biophysics | Nicolaus Copernicus University</strong> (Sep 2020 - Sep 2024)</li>
+        </ul>
+    
+        <ul>
+            <li><strong>M.Tech. Thesis – Computational Biology | Anna University, India</strong> (Oct 2018 - May 2020)</li>
+        </ul>
+    
+        <ul>
+            <li><strong>B.Tech. Thesis – Pharmaceutical Technology | Anna University, India</strong> (Sep 2014 - Sep 2018)</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Tools</h2>
+        <div class="skills">
+            <div class="skill-item">
+                <h3>Programming Languages</h3>
+                <p>Python</p>
+            </div>
+            <div class="skill-item">
+                <h3>Database Management</h3>
+                <p>SQL</p>
+            </div>
+            <div class="skill-item">
+                <h3>Operating Systems</h3>
+                <p>Windows, Linux</p>
+            </div>
+            <div class="skill-item">
+                <h3>Version Control</h3>
+                <p>Git</p>
+            </div>
+            <div class="skill-item">
+                <h3>Molecular Dynamics Simulations</h3>
+                <p>NAMD (all-atom, steered MD, meta-dynamics), GROMACS, Desmond</p>
+            </div>
+            <div class="skill-item">
+                <h3>Molecular Docking Analysis</h3>
+                <p>AutoDock, SMINA, Schrödinger Suite</p>
+            </div>
+            <div class="skill-item">
+                <h3>Post-MD Analysis</h3>
+                <p>MDTraj, MDAnalysis, ProDy</p>
+            </div>
+            <div class="skill-item">
+                <h3>Data Manipulation</h3>
+                <p>pandas, NumPy</p>
+            </div>
+            <div class="skill-item">
+                <h3>Data Visualization</h3>
+                <p>matplotlib, seaborn</p>
+            </div>
+            <div class="skill-item">
+                <h3>Web-app Development</h3>
+                <p>streamlit, dash</p>
+            </div>
+            <div class="skill-item">
+                <h3>Machine Learning / Artificial Intelligence</h3>
+                <p>scikit-learn, Keras, TensorFlow, PyTorch</p>
+            </div>
+            <div class="skill-item">
+                <h3>Model Deployment</h3>
+                <p>Heroku</p>
+            </div>
+            <div class="skill-item">
+                <h3>Computational Chemistry</h3>
+                <p>RDkit, PaDEL</p>
+            </div>
+            <div class="skill-item">
+                <h3>Visualization Tools</h3>
+                <p>PyMol, VMD, Chimera</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="methodologies">
+        <h2>Methodologies and Technical Experience</h2>
+        <ul>
+            <li><strong>Molecular modeling and Structural bioinformatics</strong> – 5 Years</li>
+            <p>I have used Classical MD simulation approaches (all-atom), enhanced sampling techniques (steered MD, meta-dynamics), and druggability simulations to identify potential druggable and ligandable sites on targets of interest using DruGUI (NAMD). Additionally, I have experience in protein structure prediction (homology modeling), Alpha-Fold, and protein sequence analysis to understand protein-protein, protein-ligand, and protein-membrane systems and experienced on structural biology databases (PDB, UniProt, SCOP, Pfam).</p>
+            
+            <li><strong>Computer-aided-drug-design (CADD)</strong> – 8 Years</li>
+            <p>I have utilized Structure-Based Drug Design techniques, such as molecular docking, along with Ligand-Based Drug Design approaches, including pharmacophore modeling, QSAR, drug similarity searches, and virtual screening. Additionally, I have been understanding the Pharmacokinetic and Pharmacodynamic properties and Structure-Activity Relationships (SAR) and ADMET underlying concepts in Medicinal Chemistry for various drug compounds.</p>
+
+            <li><strong>ML/AI for Structural bioinformatics and Drug discovery</strong> – 3 Years</li>
+            <p>I have gained experience with Deep Neural Networks (DNN), Recurrent Neural Networks (RNN), Graph-based Neural Networks, Convolutional Neural Networks (CNN), and machine learning models like Logistic Regression, Linear Regression, Support Vector Machines (SVM), K-Nearest Neighbors (KNN), Random Forest, Naïve Bayes, XGBoost, and Decision Trees. I have applied these techniques to supervised and unsupervised learning tasks, including hotspot residue prediction in the 15LOX-1/PEBP1 protein complex, virtual screening, drug repurposing, and QSAR analysis.</p>
+        </ul>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="publications">
+            <div class="pub-item">
+                <h3>Publication Title</h3>
+                <p>Journal Name, Year</p>
+            </div>
+            <div class="pub-item">
+                <h3>Publication Title</h3>
+                <p>Journal Name, Year</p>
+            </div>
+            <div class="pub-item">
+                <h3>Publication Title</h3>
+                <p>Journal Name, Year</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project-item">
+                <h3>Project Title</h3>
+                <p>Description of the project</p>
+            </div>
+            <div class="project-item">
+                <h3>Project Title</h3>
+                <p>Description of the project</p>
+            </div>
+            <div class="project-item">
+                <h3>Project Title</h3>
+                <p>Description of the project</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2>Awards</h2>
+        <ul>
+            <li>Award title - Year</li>
+            <li>Award title - Year</li>
+            <li>Award title - Year</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Information</h2>
+        <p>Email: thiliban.manivarma@example.com</p>
+        <p>Phone: +123456789</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Thiliban Manivarma. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

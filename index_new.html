@@ -4,353 +4,735 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Thiliban Manivarma – Computational Biophysics Ph.D. researcher specializing in molecular modeling, CADD, and machine learning for drug discovery.">
     <title>Thiliban Manivarma</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* ─── Reset & Base ─── */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            line-height: 1.6;
         }
 
+        /* ─── Hero Header ─── */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 20px;
+            background: linear-gradient(135deg, #0a1628 0%, #102a4c 100%);
+            color: #fff;
+            padding: 52px 40px;
         }
-
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 44px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
         header img {
             border-radius: 50%;
-            max-width: 100%;
-            width: auto;
-            height: auto;
-            max-height: 200px;
-            margin-right: 20px;
+            width: 165px;
+            height: 165px;
+            object-fit: cover;
+            border: 3px solid #0fa3b1;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 7px rgba(15, 163, 177, 0.18);
         }
-
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            text-align: center;
+        .summary h1 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 2.65em;
+            font-weight: 800;
+            margin: 0 0 5px;
+            color: #fff;
+            letter-spacing: -0.5px;
         }
-
-        .summary {
-            flex-grow: 1;
-            margin-left: 20px;
-            text-align: center;
+        .summary .tagline {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.88em;
+            font-weight: 600;
+            color: #0fa3b1;
+            margin: 0 0 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-
         .summary p {
-            font-size: 1.3em;
-            margin: 15px 0 0;
-            line-height: 1.3;
+            font-size: 0.96em;
+            margin: 0 0 22px;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.80);
+            max-width: 700px;
         }
-
-        nav {
+        .social-links {
             display: flex;
-            justify-content: center;
-            background-color: #444;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            padding: 10px 20px;
-            background-color: #555;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #777;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-            text-align: center;
-        }
-
-        .skills, .publications, .projects {
-            display: flex;
+            gap: 12px;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
         }
-
-        .skill-item, .pub-item, .project-item {
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 30%;
-            text-align: center;
+        .social-links a {
+            color: #0fa3b1;
+            text-decoration: none;
+            font-size: 0.85em;
+            font-weight: 600;
+            border: 1.5px solid #0fa3b1;
+            padding: 7px 18px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            transition: background 0.2s, color 0.2s;
         }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
+        .social-links a:hover {
+            background: #0fa3b1;
             color: #fff;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        ul li {
-            margin: 10px 0;
-            text-align: center;
-        }
-
-        .contact {
-            background-color: #f9f9f9;
-            padding: 10px;
-            text-align: center;
-        }
-
-        /* Flexbox for header content */
-        .header-content {
+        /* ─── Sticky Navigation ─── */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #0a1628;
+            border-bottom: 2px solid #0fa3b1;
+            padding: 0 20px;
+        }
+        nav a {
+            color: rgba(255, 255, 255, 0.82);
+            text-decoration: none;
+            padding: 14px 15px;
+            font-size: 0.86em;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+            white-space: nowrap;
+            letter-spacing: 0.2px;
+        }
+        nav a:hover {
+            color: #0fa3b1;
+            border-bottom-color: #0fa3b1;
+        }
+
+        /* ─── Section Headings ─── */
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.65em;
+            font-weight: 700;
+            color: #0a1628;
+            border-left: 4px solid #0fa3b1;
+            padding-left: 14px;
+            margin-bottom: 30px;
+            margin-top: 0;
+        }
+
+        /* ─── Research & Education (full-width white band) ─── */
+        .full-band {
             width: 100%;
         }
+        .full-band.white-bg { background: #fff; }
+        .full-band.light-bg { background: #f0f4f8; }
+        .full-band.navy-bg  { background: #0a1628; color: #fff; }
 
-        /* Media query for screens smaller than 768px */
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 52px 40px;
+        }
+
+        /* Education cards */
+        .edu-item {
+            background: #f8fafc;
+            border-left: 4px solid #0fa3b1;
+            border-radius: 0 8px 8px 0;
+            padding: 18px 24px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.055);
+        }
+        .edu-item h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.97em;
+            font-weight: 700;
+            color: #0a1628;
+            margin: 0 0 5px;
+        }
+        .edu-date {
+            font-size: 0.84em;
+            color: #0fa3b1;
+            font-weight: 500;
+        }
+
+        /* ─── Skills grid ─── */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .skill-item {
+            background: #fff;
+            border-top: 3px solid #0fa3b1;
+            border-radius: 8px;
+            padding: 18px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.11);
+        }
+        .skill-item h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.9em;
+            font-weight: 700;
+            color: #0a1628;
+            margin: 0 0 8px;
+        }
+        .skill-item p {
+            font-size: 0.87em;
+            color: #4a5568;
+            margin: 0;
+        }
+
+        /* ─── Methodology blocks ─── */
+        .method-block {
+            border-left: 3px solid #0fa3b1;
+            padding: 20px 26px;
+            margin-bottom: 22px;
+            background: #f8fafc;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.055);
+        }
+        .method-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 11px;
+            flex-wrap: wrap;
+        }
+        .method-header h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.02em;
+            font-weight: 700;
+            color: #0a1628;
+            margin: 0;
+        }
+        .years-badge {
+            background: #0fa3b1;
+            color: #fff;
+            font-size: 0.77em;
+            font-weight: 700;
+            padding: 3px 11px;
+            border-radius: 12px;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+        .method-block p {
+            font-size: 0.93em;
+            color: #2d3748;
+            line-height: 1.78;
+            margin: 0;
+        }
+
+        /* ─── Publications grid ─── */
+        .publications {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .pub-item {
+            background: #fff;
+            border-top: 3px solid #0fa3b1;
+            border-radius: 8px;
+            padding: 22px 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .pub-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.11);
+        }
+        .pub-item h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.96em;
+            font-weight: 700;
+            color: #0a1628;
+            margin: 0 0 8px;
+            line-height: 1.45;
+        }
+        .pub-journal {
+            font-size: 0.84em;
+            color: #0fa3b1;
+            font-style: italic;
+            margin: 0 0 16px;
+        }
+        .view-link {
+            margin-top: auto;
+            display: inline-block;
+            border: 1.5px solid #0fa3b1;
+            color: #0fa3b1;
+            font-size: 0.82em;
+            font-weight: 600;
+            padding: 6px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            align-self: flex-start;
+            transition: background 0.2s, color 0.2s;
+        }
+        .view-link:hover {
+            background: #0fa3b1;
+            color: #fff;
+        }
+
+        /* ─── Projects grid ─── */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+        .project-item {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px 22px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.11);
+        }
+        .project-item h3 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.91em;
+            font-weight: 700;
+            margin: 0 0 10px;
+            line-height: 1.4;
+        }
+        .project-item h3 a {
+            color: #0a1628;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .project-item h3 a:hover { color: #0fa3b1; }
+        .project-item p {
+            font-size: 0.86em;
+            color: #4a5568;
+            line-height: 1.65;
+            margin: 0 0 14px;
+        }
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: auto;
+        }
+        .tag {
+            background: #e0f7fa;
+            color: #0a7e8a;
+            font-size: 0.74em;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* ─── Awards list ─── */
+        .award-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .award-list li {
+            position: relative;
+            padding: 18px 20px 18px 38px;
+            margin-bottom: 12px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            font-size: 0.92em;
+            color: #2d3748;
+            line-height: 1.68;
+            text-align: left;
+        }
+        .award-list li::before {
+            content: '';
+            position: absolute;
+            left: 16px;
+            top: 26px;
+            width: 9px;
+            height: 9px;
+            background: #0fa3b1;
+            border-radius: 50%;
+        }
+        .award-list li a {
+            color: #0fa3b1;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .award-list li a:hover { text-decoration: underline; }
+
+        /* ─── Contact section ─── */
+        .navy-bg h2 { color: #fff; border-left-color: #0fa3b1; }
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+        .contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(15, 163, 177, 0.3);
+            border-radius: 8px;
+            padding: 20px 26px;
+            min-width: 240px;
+            flex: 1;
+        }
+        .contact-card .contact-label {
+            font-family: 'Raleway', sans-serif;
+            font-size: 0.78em;
+            font-weight: 700;
+            color: #0fa3b1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0 0 10px;
+        }
+        .contact-card p {
+            margin: 0;
+            font-size: 0.92em;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+        }
+        .contact-card a {
+            color: #0fa3b1;
+            text-decoration: none;
+        }
+        .contact-card a:hover { text-decoration: underline; }
+
+        /* ─── Footer ─── */
+        footer {
+            text-align: center;
+            padding: 22px 20px;
+            background-color: #06101e;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.87em;
+        }
+        footer span { color: #0fa3b1; }
+
+        /* ─── Responsive: Tablet (≤768px) ─── */
         @media screen and (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .summary {
-                margin-left: 0;
-                text-align: center;
-            }
-
-            header h1 {
-                font-size: 2em;
-                text-align: center;
-            }
-
-            header img {
-                max-height: 150px;
-                margin-bottom: 10px;
-            }
-
-            .skill-item, .pub-item, .project-item {
-                width: 90%;
-            }
+            header { padding: 36px 20px; }
+            .header-content { flex-direction: column; align-items: center; text-align: center; gap: 22px; }
+            .summary p { max-width: 100%; }
+            .social-links { justify-content: center; }
+            .section-inner { padding: 40px 24px; }
+            .skills { grid-template-columns: repeat(2, 1fr); }
+            .publications { grid-template-columns: 1fr; }
+            .projects { grid-template-columns: repeat(2, 1fr); }
         }
 
-        /* Media query for screens smaller than 480px (small devices like phones) */
+        /* ─── Responsive: Mobile (≤480px) ─── */
         @media screen and (max-width: 480px) {
-            nav a {
-                margin: 5px;
-                padding: 8px 10px;
-                font-size: 0.9em;
-            }
-
-            header h1 {
-                font-size: 1.8em;
-            }
-
-            .summary p {
-                font-size: 1.1em;
-                line-height: 1.2;
-            }
-
-            section {
-                padding: 10px;
-            }
-
-            footer {
-                font-size: 0.9em;
-            }
-        }
-
-        /* Increase font size for the list items with strong tags */
-        section#methodologies ul li strong {
-            font-size: 1.2em; /* Increase this value to make the font larger */
+            nav a { padding: 10px 10px; font-size: 0.80em; }
+            .summary h1 { font-size: 1.75em; }
+            h2 { font-size: 1.35em; }
+            .skills { grid-template-columns: 1fr; }
+            .projects { grid-template-columns: 1fr; }
+            .section-inner { padding: 32px 18px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- ═══ Hero Header ═══ -->
     <header>
         <div class="header-content">
             <img src="flux_scaled.png" alt="Profile image of Thiliban Manivarma">
             <div class="summary">
                 <h1>Thiliban Manivarma</h1>
-                <p>Innovative and dedicated molecular modelling enthusiast with a passion for leveraging cutting-edge technologies in computer-aided drug design, computational biophysics, and machine learning for transformative drug discovery. Demonstrated expertise in utilizing computational methods to analyze biomolecular structures and predict their interactions with precision. Excited to join dynamic teams where I can apply my skills to advance scientific research and contribute to the development of life-saving therapies.</p>
+                <p class="tagline">Ph.D. Researcher &middot; Computational Biophysics</p>
+                <p>Molecular Modeling Researcher with a strong passion for leveraging cutting-edge technologies in computer-aided drug design (e.g., protein-ligand interactions, pharmacophore modeling), computational biophysics (e.g., molecular dynamics simulations), and machine learning (e.g., hotspot residue prediction in protein-protein complexes, QSAR, drug repurposing) to analyse biomolecular and ligand structures and drive advancements in drug discovery. Eager to apply my skills to innovative drug discovery projects.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/thiliban-manivarma/" target="_blank">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=i2GzGagAAAAJ" target="_blank">Google Scholar</a>
+                    <a href="mailto:thilibanaussie@gmail.com">Email Me</a>
+                </div>
             </div>
         </div>
     </header>
-    
+
+    <!-- ═══ Sticky Navigation ═══ -->
     <nav>
-        <a href="#research">Research Experience</a>
-        <a href="#skills">Skills & Tools</a>
-        <a href="#methodologies">Methodologies and Technical Experience</a>
+        <a href="#research">Research &amp; Education</a>
+        <a href="#skills">Skills &amp; Tools</a>
+        <a href="#methodologies">Methodologies</a>
         <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#awards">Awards</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <section id="research">
-        <h2>Research Experience and Education</h2>
-        <ul>
-            <li><strong>Ph.D. Thesis – Computational Biophysics | Nicolaus Copernicus University</strong> (Sep 2020 - Sep 2024)</li>
-        </ul>
-    
-        <ul>
-            <li><strong>M.Tech. Thesis – Computational Biology | Anna University, India</strong> (Oct 2018 - May 2020)</li>
-        </ul>
-    
-        <ul>
-            <li><strong>B.Tech. Thesis – Pharmaceutical Technology | Anna University, India</strong> (Sep 2014 - Sep 2018)</li>
-        </ul>
-    </section>
-
-    <section id="skills">
-        <h2>Skills & Tools</h2>
-        <div class="skills">
-            <div class="skill-item">
-                <h3>Programming Languages</h3>
-                <p>Python</p>
+    <!-- ═══ Research & Education ═══ -->
+    <div id="research" class="full-band white-bg">
+        <div class="section-inner">
+            <h2>Research Experience &amp; Education</h2>
+            <div class="edu-item">
+                <h3>Ph.D. Thesis &ndash; Computational Biophysics &nbsp;|&nbsp; Nicolaus Copernicus University in Torun, Poland</h3>
+                <span class="edu-date">Sep 2020 &ndash; Sep 2024</span>
             </div>
-            <div class="skill-item">
-                <h3>Database Management</h3>
-                <p>SQL</p>
+            <div class="edu-item">
+                <h3>M.Tech. Thesis &ndash; Computational Biology &nbsp;|&nbsp; Anna University, Chennai, India</h3>
+                <span class="edu-date">Oct 2018 &ndash; May 2020</span>
             </div>
-            <div class="skill-item">
-                <h3>Operating Systems</h3>
-                <p>Windows, Linux</p>
-            </div>
-            <div class="skill-item">
-                <h3>Version Control</h3>
-                <p>Git</p>
-            </div>
-            <div class="skill-item">
-                <h3>Molecular Dynamics Simulations</h3>
-                <p>NAMD (all-atom, steered MD, meta-dynamics), GROMACS, Desmond</p>
-            </div>
-            <div class="skill-item">
-                <h3>Molecular Docking Analysis</h3>
-                <p>AutoDock, SMINA, Schrödinger Suite</p>
-            </div>
-            <div class="skill-item">
-                <h3>Post-MD Analysis</h3>
-                <p>MDTraj, MDAnalysis, ProDy</p>
-            </div>
-            <div class="skill-item">
-                <h3>Data Manipulation</h3>
-                <p>pandas, NumPy</p>
-            </div>
-            <div class="skill-item">
-                <h3>Data Visualization</h3>
-                <p>matplotlib, seaborn</p>
-            </div>
-            <div class="skill-item">
-                <h3>Web-app Development</h3>
-                <p>streamlit, dash</p>
-            </div>
-            <div class="skill-item">
-                <h3>Machine Learning / Artificial Intelligence</h3>
-                <p>scikit-learn, Keras, TensorFlow, PyTorch</p>
-            </div>
-            <div class="skill-item">
-                <h3>Model Deployment</h3>
-                <p>Heroku</p>
-            </div>
-            <div class="skill-item">
-                <h3>Computational Chemistry</h3>
-                <p>RDkit, PaDEL</p>
-            </div>
-            <div class="skill-item">
-                <h3>Visualization Tools</h3>
-                <p>PyMol, VMD, Chimera</p>
+            <div class="edu-item">
+                <h3>B.Tech. Thesis &ndash; Pharmaceutical Technology &nbsp;|&nbsp; Anna University, Chennai, India</h3>
+                <span class="edu-date">Sep 2014 &ndash; Sep 2018</span>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="methodologies">
-        <h2>Methodologies and Technical Experience</h2>
-        <ul>
-            <li><strong>Molecular modeling and Structural bioinformatics</strong> – 5 Years</li>
-            <p>I have used Classical MD simulation approaches (all-atom), enhanced sampling techniques (steered MD, meta-dynamics), and druggability simulations to identify potential druggable and ligandable sites on targets of interest using DruGUI (NAMD). Additionally, I have experience in protein structure prediction (homology modeling), Alpha-Fold, and protein sequence analysis to understand protein-protein, protein-ligand, and protein-membrane systems and experienced on structural biology databases (PDB, UniProt, SCOP, Pfam).</p>
-            
-            <li><strong>Computer-aided-drug-design (CADD)</strong> – 8 Years</li>
-            <p>I have utilized Structure-Based Drug Design techniques, such as molecular docking, along with Ligand-Based Drug Design approaches, including pharmacophore modeling, QSAR, drug similarity searches, and virtual screening. Additionally, I have been understanding the Pharmacokinetic and Pharmacodynamic properties and Structure-Activity Relationships (SAR) and ADMET underlying concepts in Medicinal Chemistry for various drug compounds.</p>
-
-            <li><strong>ML/AI for Structural bioinformatics and Drug discovery</strong> – 3 Years</li>
-            <p>I have gained experience with Deep Neural Networks (DNN), Recurrent Neural Networks (RNN), Graph-based Neural Networks, Convolutional Neural Networks (CNN), and machine learning models like Logistic Regression, Linear Regression, Support Vector Machines (SVM), K-Nearest Neighbors (KNN), Random Forest, Naïve Bayes, XGBoost, and Decision Trees. I have applied these techniques to supervised and unsupervised learning tasks, including hotspot residue prediction in the 15LOX-1/PEBP1 protein complex, virtual screening, drug repurposing, and QSAR analysis.</p>
-        </ul>
-    </section>
-
-    <section id="publications">
-        <h2>Publications</h2>
-        <div class="publications">
-            <div class="pub-item">
-                <h3>Publication Title</h3>
-                <p>Journal Name, Year</p>
-            </div>
-            <div class="pub-item">
-                <h3>Publication Title</h3>
-                <p>Journal Name, Year</p>
-            </div>
-            <div class="pub-item">
-                <h3>Publication Title</h3>
-                <p>Journal Name, Year</p>
+    <!-- ═══ Skills & Tools ═══ -->
+    <div id="skills" class="full-band light-bg">
+        <div class="section-inner">
+            <h2>Skills &amp; Tools</h2>
+            <div class="skills">
+                <div class="skill-item">
+                    <h3>Programming Languages</h3>
+                    <p>Python</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Database Management</h3>
+                    <p>SQL</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Operating Systems</h3>
+                    <p>Windows, Linux</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Version Control</h3>
+                    <p>Git</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Molecular Dynamics Simulations</h3>
+                    <p>NAMD (all-atom, steered MD, meta-dynamics), GROMACS, Desmond</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Molecular Docking Analysis</h3>
+                    <p>AutoDock, SMINA, Schr&ouml;dinger Suite</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Post-MD Analysis</h3>
+                    <p>MDTraj, MDAnalysis, ProDy</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Data Manipulation</h3>
+                    <p>pandas, NumPy</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Data Visualization</h3>
+                    <p>matplotlib, seaborn</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Web-app Development</h3>
+                    <p>streamlit, dash</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Machine Learning / Artificial Intelligence</h3>
+                    <p>scikit-learn, Keras, TensorFlow, PyTorch</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Model Deployment</h3>
+                    <p>Heroku</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Computational Chemistry</h3>
+                    <p>RDkit, PaDEL</p>
+                </div>
+                <div class="skill-item">
+                    <h3>Visualization Tools</h3>
+                    <p>PyMol, VMD, Chimera</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project-item">
-                <h3>Project Title</h3>
-                <p>Description of the project</p>
+    <!-- ═══ Methodologies ═══ -->
+    <div id="methodologies" class="full-band white-bg">
+        <div class="section-inner">
+            <h2>Methodologies &amp; Technical Experience</h2>
+            <div class="method-block">
+                <div class="method-header">
+                    <h3>Molecular Modeling and Structural Bioinformatics</h3>
+                    <span class="years-badge">5 Years</span>
+                </div>
+                <p>I have used Classical MD simulation approaches (all-atom), enhanced sampling techniques (steered MD, meta-dynamics), and druggability simulations to identify potential druggable and ligandable sites on targets of interest using DruGUI (NAMD). Additionally, I have experience in protein structure prediction (homology modeling), Alpha-Fold, and protein sequence analysis to understand protein-protein, protein-ligand, and protein-membrane systems and experienced on structural biology databases (PDB, UniProt, SCOP, Pfam).</p>
             </div>
-            <div class="project-item">
-                <h3>Project Title</h3>
-                <p>Description of the project</p>
+            <div class="method-block">
+                <div class="method-header">
+                    <h3>Computer-Aided Drug Design (CADD)</h3>
+                    <span class="years-badge">8 Years</span>
+                </div>
+                <p>I have utilized Structure-Based Drug Design techniques, such as molecular docking, along with Ligand-Based Drug Design approaches, including pharmacophore modeling, QSAR, drug similarity searches, and virtual screening. Additionally, I have been understanding the Pharmacokinetic and Pharmacodynamic properties and Structure-Activity Relationships (SAR) and ADMET underlying concepts in Medicinal Chemistry for various drug compounds.</p>
             </div>
-            <div class="project-item">
-                <h3>Project Title</h3>
-                <p>Description of the project</p>
+            <div class="method-block">
+                <div class="method-header">
+                    <h3>ML/AI for Structural Bioinformatics and Drug Discovery</h3>
+                    <span class="years-badge">3 Years</span>
+                </div>
+                <p>I have gained experience with Deep Neural Networks (DNN), Recurrent Neural Networks (RNN), Graph-based Neural Networks, Convolutional Neural Networks (CNN), and machine learning models like Logistic Regression, Linear Regression, Support Vector Machines (SVM), K-Nearest Neighbors (KNN), Random Forest, Na&iuml;ve Bayes, XGBoost, and Decision Trees. I have applied these techniques to supervised and unsupervised learning tasks, including hotspot residue prediction in the 15LOX-1/PEBP1 protein complex, virtual screening, drug repurposing, and QSAR analysis.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section id="awards">
-        <h2>Awards</h2>
-        <ul>
-            <li>Award title - Year</li>
-            <li>Award title - Year</li>
-            <li>Award title - Year</li>
-        </ul>
-    </section>
+    <!-- ═══ Publications ═══ -->
+    <div id="publications" class="full-band light-bg">
+        <div class="section-inner">
+            <h2>Publications</h2>
+            <div class="publications">
+                <div class="pub-item">
+                    <h3>The presence of substrate warrants oxygen access tunnels toward the catalytic site of lipoxygenases</h3>
+                    <p class="pub-journal">Redox Biology (2025)</p>
+                    <a class="view-link" href="https://www.sciencedirect.com/science/article/pii/S2213231725001491" target="_blank">View Paper &rarr;</a>
+                </div>
+                <div class="pub-item">
+                    <h3>WatFinder: A ProDy Tool for Protein-Water Interactions</h3>
+                    <p class="pub-journal">Bioinformatics (2024)</p>
+                    <a class="view-link" href="https://academic.oup.com/bioinformatics/article/40/8/btae516/7734913" target="_blank">View Paper &rarr;</a>
+                </div>
+                <div class="pub-item">
+                    <h3>Membrane regulation of 15LOX-1/PEBP1 complex prompts the generation of ferroptotic signals, oxygenated PEs</h3>
+                    <p class="pub-journal">Free Radical Biology and Medicine (2023)</p>
+                    <a class="view-link" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=i2GzGagAAAAJ&citation_for_view=i2GzGagAAAAJ:u-x6o8ySG0sC" target="_blank">View Paper &rarr;</a>
+                </div>
+                <div class="pub-item">
+                    <h3>Virtual Screening Reveals Potential Anti-Parasitic Drugs Inhibiting the Receptor Binding Domain of SARS-CoV-2 Spike protein</h3>
+                    <p class="pub-journal">J Virol Antivir Res 10:4 (2021)</p>
+                    <a class="view-link" href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=i2GzGagAAAAJ&citation_for_view=i2GzGagAAAAJ:u5HHmVD_uO8C" target="_blank">View Paper &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <section id="contact" class="contact">
-        <h2>Contact Information</h2>
-        <p>Email: thiliban.manivarma@example.com</p>
-        <p>Phone: +123456789</p>
-    </section>
+    <!-- ═══ Projects ═══ -->
+    <div id="projects" class="full-band white-bg">
+        <div class="section-inner">
+            <h2>Personal Projects</h2>
+            <div class="projects">
+                <div class="project-item">
+                    <h3><a href="#" target="_blank">Predicting HOTSPOT Residues (Machine Learning)</a></h3>
+                    <p>Identifying hotspot residues in protein complexes using supervised deep learning. <em>Coming soon.</em></p>
+                    <div class="tech-tags">
+                        <span class="tag">TensorFlow</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Supervised Learning</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://github.com/ThilibanManivarma/ML_AI_Projects/tree/main/15Lipoxygenase_InhibitorsCollection_chEMBL_EDA" target="_blank">Finding Potential Inhibitors for 15LOX1</a></h3>
+                    <p>Non-physical based virtual screening using ChEMBL data and ML to identify inhibitors for 15-Lipoxygenase.</p>
+                    <div class="tech-tags">
+                        <span class="tag">ChEMBL</span>
+                        <span class="tag">scikit-learn</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Cheminformatics</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://github.com/ThilibanManivarma/ML_AI_Projects/tree/main/Renewing_15LOX1_Inhibitors_GenerativeAI_RNN_LSTM" target="_blank">Renewing Drug Candidates Using Generative AI</a></h3>
+                    <p>Generating novel drug candidates against 15LOX1 using generative deep neural networks (RNN/LSTM).</p>
+                    <div class="tech-tags">
+                        <span class="tag">Generative AI</span>
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">RNN/LSTM</span>
+                        <span class="tag">EDA</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://github.com/ThilibanManivarma/ML_AI_Projects/tree/main/VirusClassification_WebApp" target="_blank">Classifying Sialic Acid Independent &amp; Dependent Viruses</a></h3>
+                    <p>Supervised ML classification of viruses from protein sequence data with a deployed web app.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Jupyter</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://github.com/ThilibanManivarma/ML_AI_Projects/tree/main/SouthIndianDish_classifier_CNN_WebApp" target="_blank">South Indian Dish Image Classifier (Deep Learning)</a></h3>
+                    <p>CNN-based image classification to discriminate South Indian dishes from image datasets.</p>
+                    <div class="tech-tags">
+                        <span class="tag">CNN</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Deep Learning</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3><a href="#" target="_blank">Exploratory Data Analysis on Tabular Datasets</a></h3>
+                    <p>Statistical analysis and visualization on multiple real-world datasets. <em>Coming soon.</em></p>
+                    <div class="tech-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">EDA</span>
+                        <span class="tag">Data Science</span>
+                    </div>
+                </div>
+                <div class="project-item">
+                    <h3><a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=i2GzGagAAAAJ&citation_for_view=i2GzGagAAAAJ:u5HHmVD_uO8C" target="_blank">Drug Discovery Hackathon 2020 (Govt. of India)</a></h3>
+                    <p>Led a team of 3 in a nationwide competition to find potential COVID-19 inhibitors using molecular docking and virtual screening.</p>
+                    <div class="tech-tags">
+                        <span class="tag">Molecular Docking</span>
+                        <span class="tag">Virtual Screening</span>
+                        <span class="tag">CADD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- ═══ Awards ═══ -->
+    <div id="awards" class="full-band light-bg">
+        <div class="section-inner">
+            <h2>Awards &amp; Achievements</h2>
+            <ul class="award-list">
+                <li>Full funding covered for trip and accommodation at the University of Copenhagen, Denmark &ndash; awarded and funded by Novo Nordisk Foundation for <em>&ldquo;Summer School &ndash; Applied Deep Learning in Bioinformatics&rdquo;</em>, Aug 06&ndash;10, 2023. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7138111451252080640/" target="_blank">View on LinkedIn &rarr;</a></li>
+                <li>Best Poster Presentation Award for <em>&ldquo;Association of 15LOX-1/PEBP1 complex with substrate and membrane triggers ferroptotic death signal&rdquo;</em> at The Eighth Edition of the Conference on Biomolecules and Nanostructures, Krakow, Poland, June 14&ndash;28, 2023. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7079874001585512449/" target="_blank">View on LinkedIn &rarr;</a></li>
+                <li>Member of the Emerging Field <em>&ldquo;Nanoscale Biophysics&rdquo;</em> (2022&ndash;2025, &gt;1 million PLN), Excellence Initiative &ndash; Research University at Nicolaus Copernicus University in Torun, Poland.</li>
+                <li>Recipient of the <em>&ldquo;Best Candidate Award&rdquo;</em> in the National Cadet Corps (NCC), Anna University, India, 2015.</li>
+                <li>Prize winner in a district-level computer educational test competition organized by the <em>&ldquo;Azim Premji Foundation&rdquo;</em> in India, 2005.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ═══ Contact ═══ -->
+    <div id="contact" class="full-band navy-bg">
+        <div class="section-inner">
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <p class="contact-label">Email</p>
+                    <p>
+                        <a href="mailto:thilibanaussie@gmail.com">thilibanaussie@gmail.com</a><br>
+                        <a href="mailto:thiliban@doktorant.umk.pl">thiliban@doktorant.umk.pl</a>
+                    </p>
+                </div>
+                <div class="contact-card">
+                    <p class="contact-label">Phone</p>
+                    <p>+48 503 959 372<br>+91 90 87 11 76 44<br><span style="font-size:0.85em; color: rgba(255,255,255,0.45);">Torun, Poland</span></p>
+                </div>
+                <div class="contact-card">
+                    <p class="contact-label">LinkedIn</p>
+                    <p><a href="https://www.linkedin.com/in/thiliban-manivarma/" target="_blank">linkedin.com/in/thiliban-manivarma</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ Footer ═══ -->
     <footer>
-        <p>&copy; 2024 Thiliban Manivarma. All Rights Reserved.</p>
+        <p>&copy; 2024 <span>Thiliban Manivarma</span> &nbsp;&middot;&nbsp; Ph.D. Researcher &ndash; Computational Biophysics &nbsp;&middot;&nbsp; Feel free to reach out!</p>
     </footer>
+
 </body>
 </html>
